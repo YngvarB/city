@@ -278,7 +278,13 @@ data-offset='50'>
 
         function myFunction(x) {
             if (x.matches) { 
-
+                
+                const body = document.body;
+                
+                body.addEventListener('click', event => {
+                    $('.navbar-collapse').collapse('hide');
+                });
+        
                 $('.navbar-nav>li>a').on('click', function(){
                 $('.navbar-collapse').collapse('hide');
                 });
@@ -287,10 +293,6 @@ data-offset='50'>
                 });
             } 
         };
-
-        
-        
-
         
         myFunction(mediaQuery); // Call listener function at run time
         mediaQuery.addListener(myFunction);
