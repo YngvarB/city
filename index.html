@@ -22,7 +22,7 @@ data-offset='50'>
         <div class="container">
             <a class="navbar-brand" href="#">City</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"> <i class="fas fa-bars" style="color:#fff; font-size:30px;"></i></span>
             </button>
             
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -271,6 +271,25 @@ data-offset='50'>
         $(document).scroll(function() {
             $('.navbar').toggleClass('scrolled', $(this).scrollTop() > $('.navbar').height());
         });
+
+
+        let mediaQuery = window.matchMedia("(max-width: 992px)");
+
+        function myFunction(x) {
+         if (x.matches) { // If media query matches
+        
+            const navLinks = document.querySelectorAll('.nav-item');
+            const menuToggle = document.getElementById('navbarSupportedContent');
+            const bsCollapse = new bootstrap.Collapse(menuToggle);
+            navLinks.forEach((l) => {
+            l.addEventListener('click', () => { bsCollapse.toggle() });
+        });
+         } 
+        };
+        
+        myFunction(mediaQuery); // Call listener function at run time
+        mediaQuery.addListener(myFunction);
+    
     </script>
 </body>
 </html>

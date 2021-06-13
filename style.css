@@ -15,7 +15,7 @@ p {
     font-size: 1.15rem;
 }
 .navbar {
-    background: transparent !important;
+    background: rgba(0, 0, 0, .7) !important;
     transition: .5s;
 }
 .navbar.scrolled {
@@ -329,8 +329,9 @@ footer {
 
 @media (max-width: 992px) {
     .navbar-light .navbar-toggler {
-        background: #fff;
+        background: transparent;
         border-radius: 0;
+        background-image: none;
     }
     .banner {
         min-height: 100vh;
