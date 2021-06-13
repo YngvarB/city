@@ -273,11 +273,6 @@ data-offset='50'>
         });
 
         // Close mobile menu on click
-
-        let mediaQuery = window.matchMedia("(max-width: 992px)");
-
-        function myFunction(x) {
-            if (x.matches) { 
                 
                 const body = document.body;
                 
@@ -291,11 +286,7 @@ data-offset='50'>
                 $('.navbar-brand').on('click', function(){
                 $('.navbar-collapse').collapse('hide');
                 });
-            } 
-        };
         
-        myFunction(mediaQuery); // Call listener function at run time
-        mediaQuery.addListener(myFunction);
     
     </script>
 </body>
