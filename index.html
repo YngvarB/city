@@ -282,8 +282,15 @@ data-offset='50'>
                 $('.navbar-nav>li>a').on('click', function(){
                 $('.navbar-collapse').collapse('hide');
                 });
+                $('.navbar-brand').on('click', function(){
+                $('.navbar-collapse').collapse('hide');
+                });
             } 
         };
+
+        
+        
+
         
         myFunction(mediaQuery); // Call listener function at run time
         mediaQuery.addListener(myFunction);
