@@ -272,19 +272,17 @@ data-offset='50'>
             $('.navbar').toggleClass('scrolled', $(this).scrollTop() > $('.navbar').height());
         });
 
+        // Close mobile menu on click
 
         let mediaQuery = window.matchMedia("(max-width: 992px)");
 
         function myFunction(x) {
-         if (x.matches) { // If media query matches
-        
-            const navLinks = document.querySelectorAll('.nav-item');
-            const menuToggle = document.getElementById('navbarSupportedContent');
-            const bsCollapse = new bootstrap.Collapse(menuToggle);
-            navLinks.forEach((l) => {
-            l.addEventListener('click', () => { bsCollapse.toggle() });
-        });
-         } 
+            if (x.matches) { 
+
+                $('.navbar-nav>li>a').on('click', function(){
+                $('.navbar-collapse').collapse('hide');
+                });
+            } 
         };
         
         myFunction(mediaQuery); // Call listener function at run time
